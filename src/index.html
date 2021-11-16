@@ -3,32 +3,40 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Ринат_Тест</title>
 	<link rel="stylesheet" href="css/style.min.css">
-	
+	<!-- <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/img/site.webmanifest">
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#1558bb">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff"> -->
 </head>
 <body>
+	<div class="container">
 
-	<div class="content">
-		<form action="#" class="add-post">
-			<h2 class="title">Написать в чат</h2>
-			<input type="text" name="title" class="add-title" placeholder="Заголовок сообщения">
-			<textarea name="text" class="add-text" placeholder="Текст сообщения"></textarea>
+
+		<form action="#" class="add-product">
+			<h2 class="title">Добавление товара</h2>
+			<input type="text" name="title" class="add-title" placeholder="Введите наименование товара">
+			<textarea name="text" class="add-text" placeholder="Введите описание товара"></textarea>
 			<div class="add-buttons">
 				<button type="submit" class="button add-button">
-					Отправить сообщение
+					Добавить товар
 				</button>
 			</div>
 		</form>
 
 		<main class="posts">
 			<section class="posts-chat">
-			<h2 class="title">Рабочий чат</h2> 
-				<div class="post-wrapper">  
+			<h2 class="title">Каталог товаров</h2> 
+				<div class="post-wrapper post-wrapper-active">  
 					<div class="post">
 						<div class="post-body">
-							<h2 class="post-title">Выбор новой кофемашины</h2>
-							<p class="post-text">Уважаемые коллеги, нам нужно срочно закрывать вопрос с выбором новой кофемашины. Как я уже говорил - я за вариант с аппаратом, который готовит только эспрессо и при этом для получения напитка нужно внести плату в размере 10 рублей. Прошу поддержать лайками.</p>
+							<h2 class="post-title">Название товара</h2>
+							<p class="post-text">Описание товара</p>
 						</div>
 					</div>
 				</div>
@@ -36,6 +44,6 @@
 		</main>
 
 	</div>
-	<script src="js/script.js" defer></script>
+	<script src="js/script.js"></script>
 </body>
 </html>
