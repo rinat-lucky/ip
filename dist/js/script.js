@@ -5,10 +5,11 @@ const addPostElem = document.querySelector('.add-product');
 
 const setPosts = {
 	allPosts: [],
-	addPost(title, text, handler) {
+	addPost(title, descr, price, handler) {
 		this.allPosts.unshift({
 			title, 
-			text
+			descr,
+			price
 		});
 		if (handler) {
 			handler();
@@ -18,13 +19,16 @@ const setPosts = {
 
 const showAllPosts = () => {
 	const title = addPostElem.elements.title.value;
-	const text = addPostElem.elements.text.value;
+	const descr = addPostElem.elements.descr.value;
+	const price = addPostElem.elements.price.value;
 	let postsHTML = '';	
 		postsHTML += `
 			<div class="post">	
 				<div class="post-body">
+					
 					<h2 class="post-title">${title}</h2>
-					<p class="post-text">${text}</p>
+					<p class="post-text">${descr}</p>
+					<h3 class="post-price">${price}</h3>
 				</div>
 				<div class="post-footer">
 					<button class="post-button delete">
@@ -49,18 +53,18 @@ const showAllPosts = () => {
 const init = () => {
 	addPostElem.addEventListener('submit', (event) => {
 		event.preventDefault();
-		const { title, text } = addPostElem.elements;
+		const { title, descr, price } = addPostElem.elements;
 
 		if (title.value.length < 2) {
-			alert('Слишком короткий заголовок сообщения');
+			alert('Слишком короткое наименование');
 			return;
 		}
-		if (text.value.length < 3) {
-			alert('Слишком короткое сообщение');
+		if (descr.value.length < 3) {
+			alert('Слишком короткое описание');
 			return;
 		}
 
-		setPosts.addPost(title.value, text.value, showAllPosts);
+		setPosts.addPost(title.value, descr.value, price.value, showAllPosts);
 		addPostElem.reset();
 	});
 };

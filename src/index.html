@@ -17,17 +17,26 @@
 <body>
 	<div class="container">
 
-
-		<form action="#" class="add-product">
-			<h2 class="title">Добавление товара</h2>
-			<input type="text" name="title" class="add-title" placeholder="Введите наименование товара">
-			<textarea name="text" class="add-text" placeholder="Введите описание товара"></textarea>
-			<div class="add-buttons">
-				<button type="submit" class="button add-button">
-					Добавить товар
-				</button>
-			</div>
-		</form>
+		<aside>
+			<section class="add">
+				<h2 class="add-header">Добавление товара</h2>
+				<form action="#" class="add-product">
+					<label for="title">Наименование товара</label>
+					<input type="text" name="title" id="title" class="add-title" placeholder="Введите наименование товара">
+					<label for="descr">Описание товара</label>
+					<textarea name="descr" id="descr" class="add-descr" placeholder="Введите описание товара"></textarea>
+					<label for="link">Ссылка на изображение товара</label>
+					<input type="text" name="link" id="link" class="add-link" placeholder="Введите ссылку">
+					<label for="price">Цена товара</label>
+					<input type="text" name="price" id="price" class="add-price" placeholder="Введите цену">
+					<div class="add-buttons">
+						<button type="submit" class="button add-button">
+							Добавить товар
+						</button>
+					</div>
+				</form>
+			</section>
+		</aside>
 
 		<main class="posts">
 			<section class="posts-chat">
@@ -35,6 +44,7 @@
 				<div class="post-wrapper post-wrapper-active">  
 					<div class="post">
 						<div class="post-body">
+							
 							<h2 class="post-title">Название товара</h2>
 							<p class="post-text">Описание товара</p>
 						</div>

@@ -44,7 +44,8 @@ body {
   padding-right: 35px;
   padding-bottom: 0;
 }
-.post-title {
+.post-title,
+.post-price {
   margin-top: 0;
   margin-bottom: 19px;
   font-weight: 600;
@@ -98,7 +99,10 @@ body {
   fill: grey;
 }
 
-
+.add {
+  display: flex;
+  flex-direction: column;
+}
 .add-product {
   display: flex;
   flex-direction: column;
@@ -107,20 +111,24 @@ body {
   border-radius: 4px;
 }
 .add-title,
-.add-text {
+.add-descr,
+.add-link,
+.add-price {
   background: #ffffff;
   border: 1px solid #e8e8e8;
   padding: 23px 30px;
   margin-bottom: 16px;
-  width: 100%;
+  height: 36px;
+  width: 284px;
 }
-.add-text {
-  min-height: 362px;
+.add-descr {
+  resize: none;
+  height: 108px;
+  
 }
 .add-button {
-  width: 100%;
-  max-width: 370px;
-  margin-right: 2%;
+  height: 36px;
+  width: 284px;
 }
 .add-product .button-outline {
   margin-right: 1%;
@@ -133,11 +141,12 @@ body {
     margin-top: 94px;
     margin-bottom: 60px;
   }
-  
   .posts {
     width: 100%;
   }
 }
+
+
 @media (max-width: 676px) {
   
   .add-button {
@@ -149,12 +158,10 @@ body {
     margin-top: 10px;
   }
 }
+
+
 @media (max-width: 576px) {
   .post-footer {
     flex-direction: column;
-  }
-
-  .add-button {
-    width: 100%;
   }
 }
