@@ -1,72 +1,60 @@
-const postsWrapper = document.querySelectorAll('.post-wrapper');
-const addPostElem = document.querySelector('.add-product');
+const postsWrapper = document.querySelectorAll('.post__wrapper');
+const addPostElem = document.querySelector('#form');
 
-// Добавление сообщений в чат (и удаление авторских сообщений)
+
+const init = () => {
+	addPostElem.addEventListener('submit', (event) => {
+		event.preventDefault();
+		const { link, title, descr, price } = addPostElem.elements;
+
+		setPosts.addPost(link.value, title.value, descr.value, price.value, showAllPosts);
+		addPostElem.reset();
+	});
+};
 
 const setPosts = {
 	allPosts: [],
-	addPost(title, descr, price, handler) {
+	addPost(link, title, descr, price, handler) {
 		this.allPosts.unshift({
+			link,
 			title, 
 			descr,
 			price
 		});
-		if (handler) {
-			handler();
-		}
+		handler();
 	},
 };
 
 const showAllPosts = () => {
+	const link = addPostElem.elements.link.value;
 	const title = addPostElem.elements.title.value;
 	const descr = addPostElem.elements.descr.value;
 	const price = addPostElem.elements.price.value;
 	let postsHTML = '';	
 		postsHTML += `
-			<div class="post">	
-				<div class="post-body">
-					
-					<h2 class="post-title">${title}</h2>
-					<p class="post-text">${descr}</p>
-					<h3 class="post-price">${price}</h3>
+			<div class="post__card">	
+				<div class="post__body">
+					<img src="${link}" alt="${title}">
+					<h2 class="post__title">${title}</h2>
+					<p class="post__descr">${descr}</p>
+					<h3 class="post__price">${price}</h3>
 				</div>
-				<div class="post-footer">
-					<button class="post-button delete">
-						<img src="img/delete.svg" alt="delete" width="19" height="20" class='icon'>
-					</button>
-				</div>
+				<a class="post__delete">
+					<img src="img/delete.svg" alt="delete" width="32" height="32">
+				</a>
 			</div>
 		`;
-	document.querySelector('.post-wrapper-active').insertAdjacentHTML("beforeend", postsHTML);
+	document.querySelector('.post__wrapper').insertAdjacentHTML("beforeend", postsHTML);
 
-	const deleteBtns = document.querySelectorAll('.delete');
+	const deleteBtns = document.querySelectorAll('.post__delete');
 	deleteBtns.forEach((item) => {
 		item.addEventListener('click', () => {
-			const post = item.closest('.post');
+			const post = item.closest('.post__card');
 			post.remove();
 		});
 	});
 	return;
 };
 
-
-const init = () => {
-	addPostElem.addEventListener('submit', (event) => {
-		event.preventDefault();
-		const { title, descr, price } = addPostElem.elements;
-
-		if (title.value.length < 2) {
-			alert('Слишком короткое наименование');
-			return;
-		}
-		if (descr.value.length < 3) {
-			alert('Слишком короткое описание');
-			return;
-		}
-
-		setPosts.addPost(title.value, descr.value, price.value, showAllPosts);
-		addPostElem.reset();
-	});
-};
 
 document.addEventListener('DOMContentLoaded', init);
