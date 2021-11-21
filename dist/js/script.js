@@ -1,7 +1,7 @@
-const postsWrapper = document.querySelectorAll('.post__wrapper');
+const postWrapper = document.querySelector('.post__wrapper');
 const addPostElem = document.querySelector('#form');
 
-
+// передача данных из отправленной формы в объект, содержащий все посты-карточки
 const init = () => {
 	addPostElem.addEventListener('submit', (event) => {
 		event.preventDefault();
@@ -12,6 +12,7 @@ const init = () => {
 	});
 };
 
+// объект-массив, содержащий все посты-карточки и передающий в рендер данные о новом посте
 const setPosts = {
 	allPosts: [],
 	addPost(link, title, descr, price, handler) {
@@ -25,6 +26,7 @@ const setPosts = {
 	},
 };
 
+// функция-рендер
 const showAllPosts = () => {
 	const link = addPostElem.elements.link.value;
 	const title = addPostElem.elements.title.value;
@@ -33,28 +35,44 @@ const showAllPosts = () => {
 	let postsHTML = '';	
 		postsHTML += `
 			<div class="post__card">	
+				<img src="${link}" alt="${title}">
 				<div class="post__body">
-					<img src="${link}" alt="${title}">
 					<h2 class="post__title">${title}</h2>
-					<p class="post__descr">${descr}</p>
-					<h3 class="post__price">${price}</h3>
+					<div class="post__descr">${descr}</div>
+					<h3 class="post__price">${price}&nbsp;руб.</h3>
 				</div>
 				<a class="post__delete">
-					<img src="img/delete.svg" alt="delete" width="32" height="32">
+					<img src="img/delete.svg" alt="delete">
 				</a>
 			</div>
 		`;
-	document.querySelector('.post__wrapper').insertAdjacentHTML("beforeend", postsHTML);
+	postWrapper.insertAdjacentHTML("beforeend", postsHTML);
+	deletePost();
+	return;
+};
 
+// функция, перебирающая все посты для выведения на экран и применения кнопки "удалить" на каждой карточке
+const deletePost = () => {
+	const posts = document.querySelectorAll('.post__card');
 	const deleteBtns = document.querySelectorAll('.post__delete');
+
+	posts.forEach((item) => {
+		const deleteBtn = item.querySelector('.post__delete');
+		item.addEventListener('mouseenter', () => {
+			deleteBtn.classList.add('post__delete_active');
+		})
+		item.addEventListener('mouseleave', () => {
+			deleteBtn.classList.remove('post__delete_active');
+		})
+	})
+	
 	deleteBtns.forEach((item) => {
 		item.addEventListener('click', () => {
 			const post = item.closest('.post__card');
 			post.remove();
 		});
 	});
-	return;
-};
+}
 
-
+deletePost();
 document.addEventListener('DOMContentLoaded', init);

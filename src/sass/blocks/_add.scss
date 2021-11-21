@@ -1,0 +1,104 @@
+.add {
+	display: flex;
+	flex-direction: column;
+	&__header {
+		margin: 32px 0 0 0;
+		font-weight: 600;
+		font-size: 28px;
+		line-height: 35px;
+		color: #3F3F3F;
+	}
+	&__product {
+        display: block;
+        position: sticky;
+        top: 24px;
+		width: 332px;
+		height: 440px;
+		border-radius: 4px;
+		margin-top: 16px;
+		padding: 24px;
+		box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
+	}
+    &__form {
+        display: flex;
+		flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+    }
+    &__form label {
+		display: block;
+        position: relative;
+		margin-bottom: 4px;
+		font-size: 10px;
+		line-height: 13px;
+		letter-spacing: -0.02em;
+		color: #49485E;
+        width: max-content;
+	}
+    &__form label.required::after {
+        content: "";
+        position: absolute;
+        right: -5px;
+        width: 4px;
+        height: 4px;
+        border-radius: 100%;
+        background-color: #FF8484;
+        z-index: 1;
+    }
+	&__input {
+		background: #ffffff;
+		border-style: none;
+		border-radius: 4px;
+		padding: 10px 16px 11px;
+		margin-bottom: 16px;
+		height: 36px;
+		width: 284px;
+		font-size: 12px;
+		line-height: 15px;
+		box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+		&::placeholder {
+			color: #B4B4B4;
+		}
+		&:focus-visible {
+			outline: #B4B4B4 auto 1px;
+		}
+	}
+	&__input#descr {
+		resize: none;
+  		height: 108px;
+	}
+	&__btn {
+		display: block;
+		margin-top: 7px;
+        width: 100%;
+	}
+}
+
+
+@media (max-width: 1400px) {
+	.add {
+        width: 29%;
+        &__header {
+            margin: 30px 0 0 0;
+            font-size: 25px;
+            line-height: 30px;
+        }
+        &__product {
+            width: 100%;
+            height: auto;
+        }
+        &__form {
+            width: 97%;
+        }
+        &__input {
+            margin: 0 auto 16px auto;
+            height: 35px;
+            width: 100%;
+        }
+        &__input#descr {
+            resize: none;
+            height: 100px;
+        }
+    }
+}

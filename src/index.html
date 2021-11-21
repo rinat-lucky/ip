@@ -6,13 +6,12 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Ринат_Тест</title>
 	<link rel="stylesheet" href="css/style.min.css">
-	<!-- <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-    <link rel="manifest" href="/img/site.webmanifest">
-    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#1558bb">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff"> -->
+	<!-- Фавиконка с моим фото -->
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-32x32.png">
+	<link rel="manifest" href="img/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
 </head>
 <body>
 	<div class="container">
@@ -20,35 +19,40 @@
 		<aside class="add">
 			<h2 class="add__header">Добавление товара</h2>
 			<div class="add__product">
-				<form action="#" id="form">
-					<label for="title">Наименование товара</label>
+				<form action="#" id="form" class="add__form">
+					<label for="title" class="required">Наименование товара</label>
 					<input type="text" name="title" id="title" class="add__input" placeholder="Введите наименование товара" required>
 					<label for="descr">Описание товара</label>
 					<textarea name="descr" id="descr" class="add__input" placeholder="Введите описание товара"></textarea>
-					<label for="link">Ссылка на изображение товара</label>
+					<label for="link" class="required">Ссылка на изображение товара</label>
 					<input type="text" name="link" id="link" class="add__input" placeholder="Введите ссылку" required>
-					<label for="price">Цена товара</label>
+					<label for="price" class="required">Цена товара</label>
 					<input type="text" name="price" id="price" class="add__input" placeholder="Введите цену" required>
-					<a class="button">
-						<button type="submit">Добавить товар</button>
+					<a class="add__btn">
+						<button type="submit" class="btn btn_active">Добавить товар</button>
 					</a>
 				</form>
 			</div>
 		</aside>
 
 		<main class="post">
-			<!-- <div class="post__sort">По умолчанию</div>  -->
-			<div class="post__wrapper post__wrapper-active">  
+			<select class="post__sort">
+				<option value="value1" selected>По умолчанию</option>
+				<option value="value2">По цене</option>
+				<option value="value3">По популярности</option>
+			</select>
+
+			<div class="post__wrapper">  
 				<div class="post__card">	
+					<img src="https://hsto.org/getpro/moikrug/uploads/company/100/004/473/2/logo/ec2265377e00bd0bf082f3177c978e77.png" alt="Тестовое фото">
 					<div class="post__body">
-						<img src="https://prikolnye-kartinki.ru/img/picture/Aug/30/3bb3b367a294f2ec6dd4c8824196ba73/2.jpg" alt="название">
-						<h2 class="post__title">Название</h2>
-						<p class="post__descr">Описание</p>
-						<h3 class="post__price">10 000 р.</h3>
+						<h2 class="post__title">Тестовая карточка</h2>
+						<div class="post__descr">Карточка для образца.<br>Ее можно удалить, а можно и не удалять :)</div>
+						<h3 class="post__price">Бесценно</h3>
 					</div>
-					<!-- <a class="post__delete">
-						<img src="img/delete.svg" alt="delete" width="32" height="32">
-					</a> -->
+					<a class="post__delete">
+						<img src="img/delete.svg" alt="delete">
+					</a>
 				</div>
 			</div>
 		</main>
