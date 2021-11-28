@@ -10,7 +10,7 @@
 		text-align: left;
 		border-radius: 4px;
 		color: #B4B4B4;
-		font-size: 12px;
+		font-size: 0.8rem;
         cursor: pointer;
 		box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 	}
@@ -52,8 +52,8 @@
 	}
 	&__title {
         font-weight: 600;
-        font-size: 20px;
-        line-height: 25px;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
         color: #3F3F3F;
         margin: 0;
         flex: 0 0 auto;
@@ -61,16 +61,16 @@
     &__descr {
 		margin-top: 16px;
         color: #262626;
-		font-size: 14px;
-		line-height: 22px;
+		font-size: 0.9rem;
+		line-height: 1.3rem;
         overflow-wrap: break-word;
         flex: 1 0 auto;
 	}
     &__price {
         margin: 0;
         font-weight: 600;
-        font-size: 24px;
-        line-height: 30px;
+        font-size: 1.5rem;
+        line-height: 1.9rem;
         color: #3F3F3F;
         flex: 0 0 auto;
 	}
@@ -114,10 +114,6 @@
         }
         &__body {
             height: 60%;
-        }
-        &__title {
-            font-size: 18px;
-            line-height: 23px;
         }
         &__delete {
             top: -7px;

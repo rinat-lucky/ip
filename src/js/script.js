@@ -1,37 +1,19 @@
 const postWrapper = document.querySelector('.post__wrapper');
-const addPostElem = document.querySelector('#form');
+const addPostForm = document.querySelector('#form');
 
-// передача данных из отправленной формы в объект, содержащий все посты-карточки
+// передача данных из отправленной формы в функцию-рендер
 const init = () => {
-	addPostElem.addEventListener('submit', (event) => {
+	addPostForm.addEventListener('submit', (event) => {
 		event.preventDefault();
-		const { link, title, descr, price } = addPostElem.elements;
+		const { link, title, descr, price } = addPostForm.elements;
 
-		setPosts.addPost(link.value, title.value, descr.value, price.value, showAllPosts);
-		addPostElem.reset();
+		showAllPosts(link.value, title.value, descr.value, price.value);
+		addPostForm.reset();
 	});
 };
 
-// объект-массив, содержащий все посты-карточки и передающий в рендер данные о новом посте
-const setPosts = {
-	allPosts: [],
-	addPost(link, title, descr, price, handler) {
-		this.allPosts.unshift({
-			link,
-			title, 
-			descr,
-			price
-		});
-		handler();
-	},
-};
-
 // функция-рендер
-const showAllPosts = () => {
-	const link = addPostElem.elements.link.value;
-	const title = addPostElem.elements.title.value;
-	const descr = addPostElem.elements.descr.value;
-	const price = addPostElem.elements.price.value;
+const showAllPosts = (link, title, descr, price) => {
 	let postsHTML = '';	
 		postsHTML += `
 			<div class="post__card">	
@@ -51,7 +33,7 @@ const showAllPosts = () => {
 	return;
 };
 
-// функция, перебирающая все посты для выведения на экран и применения кнопки "удалить" на каждой карточке
+// функция, выводящая кнопки "удалить" на каждой карточке, а также удаляющая посты при клике на такие кнопки
 const deletePost = () => {
 	const posts = document.querySelectorAll('.post__card');
 	const deleteBtns = document.querySelectorAll('.post__delete');

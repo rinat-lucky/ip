@@ -4,8 +4,8 @@
 	&__header {
 		margin: 32px 0 0 0;
 		font-weight: 600;
-		font-size: 28px;
-		line-height: 35px;
+		font-size: 1.8rem;
+		line-height: 2.1rem;
 		color: #3F3F3F;
 	}
 	&__product {
@@ -30,8 +30,8 @@
 		display: block;
         position: relative;
 		margin-bottom: 4px;
-		font-size: 10px;
-		line-height: 13px;
+		font-size: 0.7rem;
+		line-height: 0.8rem;
 		letter-spacing: -0.02em;
 		color: #49485E;
         width: max-content;
@@ -54,8 +54,8 @@
 		margin-bottom: 16px;
 		height: 36px;
 		width: 284px;
-		font-size: 12px;
-		line-height: 15px;
+		font-size: 0.8rem;
+		line-height: 0.9rem;
 		box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 		&::placeholder {
 			color: #B4B4B4;
@@ -67,11 +67,6 @@
 	&__input#descr {
 		resize: none;
   		height: 108px;
-	}
-	&__btn {
-		display: block;
-		margin-top: 7px;
-        width: 100%;
 	}
 }
 
