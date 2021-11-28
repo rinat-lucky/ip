@@ -31,6 +31,7 @@
 		height: 100%;
 		width: 332px;
         border-radius: 4px;
+        cursor: pointer;
         box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
 	}
     &__card > img {
@@ -52,7 +53,7 @@
 	}
 	&__title {
         font-weight: 600;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         line-height: 1.5rem;
         color: #3F3F3F;
         margin: 0;
@@ -61,7 +62,7 @@
     &__descr {
 		margin-top: 16px;
         color: #262626;
-		font-size: 0.9rem;
+		font-size: 1rem;
 		line-height: 1.3rem;
         overflow-wrap: break-word;
         flex: 1 0 auto;
@@ -95,7 +96,7 @@
 
 @media (max-width: 1400px) {
     .post {
-        max-width: 70%;
+        width: 70%;
         padding-top: 29px;
         &__wrapper {
             grid-template-columns: repeat(3, 1fr);
